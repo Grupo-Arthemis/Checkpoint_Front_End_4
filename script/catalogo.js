@@ -11,9 +11,11 @@ async function alterarCoresBloob(cor1,cor2) {
       const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
   
       // Definir o SVG modificado como plano de fundo
-      const svgContainer = document.getElementsByClassName('svg-container');
+      const svgContainer = document.querySelectorAll('.svg-container');
       console.log(svgContainer)
-      svgContainer.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
+      svgContainer.forEach((svgContainer) => {
+        svgContainer.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
+      });
     } catch (error) {
       console.error('Erro ao carregar e modificar o SVG:', error);
     }
