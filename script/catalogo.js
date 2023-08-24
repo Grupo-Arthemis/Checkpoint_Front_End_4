@@ -1,19 +1,27 @@
 // Função para carregar um arquivo SVG e alterar as cores
 async function alterarCoresBloob(cor1,cor2) {
-    let corUm = cor1;
-    let corDois = cor2;
+
     try {
       // Carregar o arquivo SVG usando fetch
       const response = await fetch('../assets/bloob.svg');
       const svgContent = await response.text();
-  
+
       // Modificar as cores no SVG
-      const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
-  
+
       // Definir o SVG modificado como plano de fundo
       const svgContainer = document.querySelectorAll('.svg-container');
       console.log(svgContainer)
       svgContainer.forEach((svgContainer) => {
+        let corUm = cor1;
+        let corDois = cor2;
+
+        if (corUm == "randon"){
+          corUm = "#"+Math.floor(Math.random()*16777215).toString(16);
+        }
+        if (corDois == "randon"){
+          corDois = "#"+Math.floor(Math.random()*16777215).toString(16);
+        }
+        const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
         svgContainer.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
       });
     } catch (error) {
@@ -31,7 +39,7 @@ function addProdutosAuto(quantidade){
 
   for (var i = 0; i < quantidade; i++) {
       console.log(quantidade)
-      var novoProduto =  
+      var novoProduto =
                         "<div class='destaque-card' class='svg-container'>"  +
                         "<div>" +
                         "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem'>" +
@@ -57,7 +65,7 @@ function addProdutosAuto(quantidade){
   (myFunction(botao))})});
 };
 
- 
+
 let botao = document.querySelectorAll('.circulo');
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
@@ -68,7 +76,7 @@ botao.forEach((botao) => {
 function myFunction(botao) {
     let div = botao.parentNode;
     console.log(div)
-      div.innerHTML = "<p class='subtrair'>-</p>" + 
+      div.innerHTML = "<p class='subtrair'>-</p>" +
                       "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
                       "<p class='somar'>+</p>";
       console.log('Botão clicado')
@@ -82,7 +90,7 @@ function myFunction(botao) {
         console.log(quantidade.innerHTML)
         quantidade.innerHTML = parseInt(quantidade.innerHTML) + 1
         sacola.innerHTML = parseInt(sacola.innerHTML) + 1});
-        
+
         let sub = div.querySelector('.subtrair');
         console.log(sub)
         sub.addEventListener('click', () => {
@@ -92,7 +100,7 @@ function myFunction(botao) {
           quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
           sacola.innerHTML = parseInt(sacola.innerHTML) - 1
           if (quantidade.innerHTML == 0){
-            div.innerHTML = 
+            div.innerHTML =
             "<div class='circulo'>" +
             "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
             "</div>";
@@ -111,4 +119,3 @@ function calcw(px){
   var valor = (px*100)/1920;
   return valor;
 }
- 
