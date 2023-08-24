@@ -1,5 +1,11 @@
 @import url(./padrao.css);
 
+:root{
+    overflow-x: hidden;
+}
+
+
+
 header nav{
     display: flex;
     justify-content: space-between;
@@ -58,7 +64,7 @@ main h1{
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    width: 100vw;
+    width: 100vw; 
 
 }
 
@@ -143,7 +149,7 @@ main h1{
 
 .card-carrinho div{
     background-color: #fff;
-    padding: 20%;
+    padding: min(20px, 1.041666vw);
     border-radius: 50%;
 }
 
@@ -157,10 +163,10 @@ main h1{
 }
 
 .card-carrinho p{
-    width: 27px;
-    height: 27px;
+    width: min(27px, 1.406vw);
+    height: min(27px, 1.406vw);
     font-family: Droid Sans;
-    font-size: 27px;
+    font-size: min(27px, 1.406vw);
     text-align: center;
     font-weight: 700;
     align-items: baseline;
@@ -168,9 +174,9 @@ main h1{
 
 .subtrair{
     background-color: #fff;
-    margin-bottom: 16px;
-    margin-right: 22px;
-    border-radius: 5px;
+    margin-bottom: min(16px, 0.8333vw);
+    margin-right: min(25px, 1.302083vw);
+    border-radius: min(5px, 0.26041vw);
     user-select: none;
 }
 
@@ -180,9 +186,9 @@ main h1{
 
 .somar{
     background-color: #fff;
-    margin-bottom: 16px;
-    margin-left: 22px;
-    border-radius: 5px;
+    margin-bottom: min(16px, 0.8333vw);
+    margin-left: min(25px, 1.302083vw);
+    border-radius: min(5px, 0.26041vw);
     user-select: none;
 }
 
