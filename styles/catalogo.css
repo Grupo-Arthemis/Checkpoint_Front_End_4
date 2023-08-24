@@ -63,10 +63,61 @@ main h1{
     background-image: url(../assets/fundo-gradiente.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 110vh;
     width: 100vw; 
-
 }
+
+.carousel-caption {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #000;
+    text-align: center;
+    font-family: Bona Nova;
+    font-size: min(27px, 1.406vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  .carousel-caption p {
+    font-size: min(20px ,1.04166vw);
+  }
+
+  .carousel-indicators li {
+    background-color: rgba(78, 76, 76, 0.199); /* Altere para a cor desejada */
+  }
+
+  .carousel-indicators .active {
+    background-color: rgba(0, 0, 0, 0.808); /* Altere para a cor desejada */
+  }
+
+      /* Personalize a posição das setas do carrossel */
+.carousel-control-prev,
+.carousel-control-next {
+    top: 80%; /* Ajuste para a posição vertical desejada */
+}
+
+.carousel-control-prev {
+    left: 23%; /* Ajuste para a posição horizontal da seta anterior */
+}
+
+.carousel-control-next {
+    right: 23%; /* Ajuste para a posição horizontal da seta próxima */
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+  }
+
+
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
+
+
 
 .produtos-destaque-carrossel{
     display: flex;
@@ -196,5 +247,12 @@ main h1{
     position: absolute;
 }
 
+/* galeria de produtos */
 
-
+.produtos-galeria{
+    background-image: url("../assets/Fundo-preto.svg");
+    background-size: cover;
+    margin-top: -350px;
+    height: 200vh;
+    width: 100vw; 
+}

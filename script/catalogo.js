@@ -29,11 +29,6 @@ async function alterarCoresBloob(cor1,cor2) {
     }
   };
 
-
-
-
-
-
 function addProdutosAuto(quantidade){
   var catLinha = document.querySelector('.produtos-destaque-carrossel');
 
@@ -65,13 +60,12 @@ function addProdutosAuto(quantidade){
   (myFunction(botao))})});
 };
 
-
 let botao = document.querySelectorAll('.circulo');
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
     (myFunction(botao))})});
 
-    let sacola = document.querySelector('#quantItensSacola');
+let sacola = document.querySelector('#quantItensSacola');
 
 function myFunction(botao) {
     let div = botao.parentNode;
