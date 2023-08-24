@@ -16,15 +16,86 @@ async function alterarCoresBloob(cor1,cor2) {
     } catch (error) {
       console.error('Erro ao carregar e modificar o SVG:', error);
     }
+  };
+
+
+
+
+
+
+function addProdutosAuto(quantidade){
+  var catLinha = document.querySelector('.produtos-destaque-carrossel');
+
+  for (var i = 0; i < quantidade; i++) {
+      console.log(quantidade)
+      var novoProduto =  
+                        "<div class='destaque-card' id='svg-container'>"  +
+                        "<div>" +
+                        "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem'>" +
+                        "</div>" +
+                        "<div class='card-info'>" +
+                        "<div>" +
+                        "<h2 class='nomeVinhoDestaque'>DOMINI VENETI PINOT GRIGIO</h2>" +
+                        "<p class='anoVinhoDestaque'>2023</p>" +
+                        "</div>" +
+                        "<h3 class='precoVinhoDestaque'>R$ 199,99</h3>" +
+                        "</div>" +
+                        "<div class='card-carrinho'>" +
+                        "<div class='circulo'>" +
+                        "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>"
+      catLinha.innerHTML += novoProduto;
   }
+  let botao = document.querySelectorAll('.circulo');
+  botao.forEach((botao) => {
+  botao.addEventListener('click', () => {
+  (myFunction(botao))})});
+};
 
-  let botaoCarrinhoCard = document.getElementById('addCarrinho');
-  botaoCarrinhoCard.addEventListener("click", () => {
-        console.log("teste");
-        botaoCarrinhoCard.value = "Adicionado";
+ 
+let botao = document.querySelectorAll('.circulo');
+botao.forEach((botao) => {
+  botao.addEventListener('click', () => {
+    (myFunction(botao))})});
 
-        let novoTitulo = document.createElement('p');
-        novoTitulo.textContent = "Adicionado";
-        botaoCarrinhoCard.replaceWith(novoTitulo);
+    let sacola = document.querySelector('#quantItensSacola');
 
-    });
+function myFunction(botao) {
+    let div = botao.parentNode;
+    console.log(div)
+      div.innerHTML = "<p class='subtrair'>-</p>" + 
+                      "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
+                      "<p class='somar'>+</p>";
+      console.log('Botão clicado')
+      sacola.innerHTML = parseInt(sacola.innerHTML) + 1;
+
+      let sum = div.querySelector('.somar');
+      console.log(sum)
+      sum.addEventListener('click', () => {
+        console.log('adicionando')
+        const quantidade = div.querySelector('.addCarrinho');
+        console.log(quantidade.innerHTML)
+        quantidade.innerHTML = parseInt(quantidade.innerHTML) + 1
+        sacola.innerHTML = parseInt(sacola.innerHTML) + 1});
+        
+        let sub = div.querySelector('.subtrair');
+        console.log(sub)
+        sub.addEventListener('click', () => {
+          console.log('subitraindo')
+          const quantidade = div.querySelector('.addCarrinho');
+          console.log(quantidade.innerHTML)
+          quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
+          sacola.innerHTML = parseInt(sacola.innerHTML) - 1
+          if (quantidade.innerHTML == 0){
+            div.innerHTML = 
+            "<div class='circulo'>" +
+            "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
+            "</div>";
+
+            let newCirculo = div.querySelector('.circulo');
+            newCirculo.addEventListener('click', () => {
+            (myFunction(newCirculo))})}})
+};
+ 
