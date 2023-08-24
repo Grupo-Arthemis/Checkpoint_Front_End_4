@@ -11,7 +11,8 @@ async function alterarCoresBloob(cor1,cor2) {
       const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
   
       // Definir o SVG modificado como plano de fundo
-      const svgContainer = document.getElementById('svg-container');
+      const svgContainer = document.getElementsByClassName('svg-container');
+      console.log(svgContainer)
       svgContainer.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
     } catch (error) {
       console.error('Erro ao carregar e modificar o SVG:', error);
@@ -29,7 +30,7 @@ function addProdutosAuto(quantidade){
   for (var i = 0; i < quantidade; i++) {
       console.log(quantidade)
       var novoProduto =  
-                        "<div class='destaque-card' id='svg-container'>"  +
+                        "<div class='destaque-card' class='svg-container'>"  +
                         "<div>" +
                         "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem'>" +
                         "</div>" +
