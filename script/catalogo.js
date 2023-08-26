@@ -113,3 +113,6 @@ function calcw(px){
   var valor = (px*100)/1920;
   return valor;
 }
+
+
+
