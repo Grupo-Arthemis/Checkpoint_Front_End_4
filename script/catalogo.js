@@ -2,13 +2,8 @@
 async function alterarCoresBloob(cor1,cor2) {
 
     try {
-      // Carregar o arquivo SVG usando fetch
       const response = await fetch('../assets/bloob.svg');
       const svgContent = await response.text();
-
-      // Modificar as cores no SVG
-
-      // Definir o SVG modificado como plano de fundo
       const svgContainer = document.querySelectorAll('.svg-container');
       console.log(svgContainer)
       svgContainer.forEach((svgContainer) => {

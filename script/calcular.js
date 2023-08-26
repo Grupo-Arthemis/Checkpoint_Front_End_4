@@ -1,7 +1,3 @@
-// get all styles components from the page
-
-
-// Adicionar um ouvinte de evento de redimensionamento à janela
 const stylesheet = document.styleSheets[0];
 if (window.innerWidth < 700){
     x = 2.3
@@ -19,13 +15,6 @@ window.addEventListener('resize',()=>{
     }
     adaptar(x)
 });
-
-// Chamar a função inicialmente para exibir a largura atual
-
-
-
-
-
 
 function adaptar (x){
     for(let i = 9; i < stylesheet.cssRules.length; i++) {
@@ -51,6 +40,6 @@ function calcularProporcao(tamanhoPX){
         tamanhoVW = ((parseFloat(tamanhoPX) * 100) / 1920) * x;
         return tamanhoVW;
 }
-}
+};
 
 

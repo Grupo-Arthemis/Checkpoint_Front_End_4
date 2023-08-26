@@ -155,7 +155,11 @@ main h1{
     background-color: #fff;
     padding: min(20px, 1.041666vw);
     border-radius: 50%;
+    width: min(30px, 0.885416vw);
+    height: min(30px, 0.885416vw);
 }
+
+
 
 .card-carrinho img{
     width: min(27px, 1.406vw);
@@ -222,6 +226,6 @@ main h1{
     background-image: url("../assets/Fundo-preto.svg");
     background-size: cover;
     margin-top: -23vw;
-    height: 200vh;
+    height: 130vw;
     width: 100vw; 
 }
