@@ -61,11 +61,11 @@ console.log(botao);
 
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
-    (myFunction(botao))})});
+    (addAoCarrinho(botao))})});
 
 let sacola = document.querySelector('#quantItensSacola');
 
-function myFunction(botao) {
+function addAoCarrinho(botao) {
     let div = botao.parentNode;
     console.log(div)
       div.innerHTML = "<p class='subtrair'>-</p>" +
@@ -99,7 +99,7 @@ function myFunction(botao) {
 
             let newCirculo = div.querySelector('.circulo');
             newCirculo.addEventListener('click', () => {
-            (myFunction(newCirculo))})}})
+            (addAoCarrinho(newCirculo))})}})
 };
 
 function calch(px){
