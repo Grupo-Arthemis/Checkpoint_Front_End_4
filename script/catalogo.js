@@ -114,5 +114,7 @@ function calcw(px){
   return valor;
 }
 
+addProdutosAuto(2);
+
 
 

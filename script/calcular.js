@@ -3,6 +3,13 @@
 
 // Adicionar um ouvinte de evento de redimensionamento à janela
 const stylesheet = document.styleSheets[0];
+if (window.innerWidth < 700){
+    x = 2.3
+}
+else{
+    x = 1
+}
+adaptar(x)
 window.addEventListener('resize',()=>{
     if (window.innerWidth < 700){
         x = 2.3
