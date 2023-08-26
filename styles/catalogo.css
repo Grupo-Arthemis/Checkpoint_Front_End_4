@@ -137,6 +137,7 @@ main h1{
 
 .card-info h3{
     font-weight: 700;
+    font-family: Droid Sans;
     font-size: min(20px ,1.04166vw);
 }
 
@@ -220,7 +221,7 @@ main h1{
     }
 }
 
-
+/* galeria de produtos --------------------------------------------------------------------------------- */
 
 .produtos-galeria{
     background-image: url("../assets/Fundo-preto.svg");
@@ -228,4 +229,144 @@ main h1{
     margin-top: -23vw;
     height: 130vw;
     width: 100vw; 
+    padding-top: 20vw;
 }
+
+.grid-produtos{
+    display: flex;
+    gap: 10%;
+}
+
+
+
+.destaque-card-grid{
+    width: min(276.09px, 14.37960vw);
+    height: min(507px, 26.40625vw);
+    background: #EFEFF0;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    background-image: url(../assets/bloob.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    grid-template-rows: 60% 40% 0;
+    text-align: center;
+}
+
+.destaque-card-grid> div:first-child{
+   justify-content: center;
+   display: flex;
+}
+
+.destaque-card-imagem-grid{
+    height: 100%;
+}
+
+
+.card-info-grid{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    height: 94%;
+    padding: 0 3%;
+    margin: 2% 0;
+}
+
+.bottom-info-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grid-separation{
+    height: min(2px ,1.04166vw);
+    width: 100%;
+    margin: 0 0 2% 0;
+    border-radius: 20%;
+    background: #D9D9D9;
+    margin-bottom: min(35px ,1.04166vw);
+}
+
+.card-info-grid h2{
+    color: #000;
+    font-family: Droid Sans;
+    font-size: min(20px ,1.04166vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    letter-spacing: min(1.3px ,0.06770vw);
+}
+
+.card-info-grid h3{
+    font-weight: 700;
+    font-size: min(20px ,1.04166vw);
+    font-family: Droid Sans;
+}
+
+.card-info-grid p{
+    font-size: min(20px ,1.04166vw);
+    transform: rotate(-90deg);   
+    font-family: Delius Swash Caps;
+    margin-top: min(150px ,1.04166vw);
+}
+
+.card-carrinho-grid{
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.card-carrinho-grid div{
+    background-color: #fff;
+    padding: min(20px, 1.041666vw);
+    border-radius: 50%;
+    width: min(25px, 0.885416vw);
+    height: min(25px, 0.885416vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-carrinho-grid img{
+    width: min(20px, 1.406vw);
+}
+
+.circulo-grid:hover{
+    background-color: #0000001e;
+}
+
+.card-carrinho-grid p{
+    width: min(27px, 1.406vw);
+    height: min(27px, 1.406vw);
+    font-family: Droid Sans;
+    font-size: min(27px, 1.406vw);
+    text-align: center;
+    font-weight: 700;
+    align-items: baseline;
+}
+
+.subtrair{
+    background-color: #fff;
+    margin-bottom: min(16px, 0.8333vw);
+    margin-right: min(25px, 1.302083vw);
+    border-radius: min(5px, 0.26041vw);
+    user-select: none;
+}
+
+.subtrair:hover, .somar:hover{
+    background-color: #0000001e;
+}
+
+.somar{
+    background-color: #fff;
+    margin-bottom: min(16px, 0.8333vw);
+    margin-left: min(25px, 1.302083vw);
+    border-radius: min(5px, 0.26041vw);
+    user-select: none;
+}
+
+.circulop{
+    position: absolute;
+}
+
+

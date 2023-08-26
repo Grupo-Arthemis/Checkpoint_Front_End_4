@@ -56,6 +56,7 @@ function addProdutosAuto(quantidade){
 };
 
 let botao = document.querySelectorAll('.circulo');
+
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
     (myFunction(botao))})});
