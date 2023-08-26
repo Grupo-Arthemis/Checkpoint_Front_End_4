@@ -1,4 +1,5 @@
 // Função para carregar um arquivo SVG e alterar as cores
+
 async function alterarCoresBloob(cor1,cor2) {
 
     try {
@@ -49,13 +50,14 @@ function addProdutosAuto(quantidade){
                         "</div>"
       catLinha.innerHTML += novoProduto;
   }
-  let botao = document.querySelectorAll('.circulo');
-  botao.forEach((botao) => {
-  botao.addEventListener('click', () => {
-  (myFunction(botao))})});
 };
 
+addProdutosAuto(2);
+
+
 let botao = document.querySelectorAll('.circulo');
+console.log(botao);
+
 
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
@@ -108,9 +110,4 @@ function calch(px){
 function calcw(px){
   var valor = (px*100)/1920;
   return valor;
-}
-
-addProdutosAuto(2);
-
-
-
+} 
