@@ -3,27 +3,39 @@
 async function alterarCoresBloob(cor1,cor2) {
 
     try {
-      const response = await fetch('../assets/bloob.svg');
-      const svgContent = await response.text();
-      const svgContainer = document.querySelectorAll('.svg-container');
-      console.log(svgContainer)
-      svgContainer.forEach((svgContainer) => {
-        let corUm = cor1;
-        let corDois = cor2;
+      const response_1 = await fetch('../assets/bloob.svg');
+      const svgContent_1 = await response_1.text();
 
-        if (corUm == "randon"){
-          corUm = "#"+Math.floor(Math.random()*16777215).toString(16);
-        }
-        if (corDois == "randon"){
-          corDois = "#"+Math.floor(Math.random()*16777215).toString(16);
-        }
-        const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
-        svgContainer.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
-      });
+      const response_2 = await fetch('../assets/bloob-horizontal.svg');
+      const svgContent_2 = await response_2.text();
+
+      const svgContainer_1 = document.querySelectorAll('.destaque-card.svg-container');
+      alterar(svgContainer_1,svgContent_1);
+
+      const svgContainer_2 = document.querySelectorAll(".destaque-card-grid.svg-container");
+      alterar(svgContainer_2,svgContent_2);
+
+      function alterar(svg,svgContent) {
+
+        svg.forEach((svg) => {
+          let corUm = cor1;
+          let corDois = cor2;
+  
+          if (corUm == "randon"){
+            corUm = "#"+Math.floor(Math.random()*16777215).toString(16);
+          }
+          if (corDois == "randon"){
+            corDois = "#"+Math.floor(Math.random()*16777215).toString(16);
+          }
+          const svgModificado = svgContent.replace(/#3790F8/g, `${corUm}`).replace(/#FBA81F/g, `${corDois}`);
+          svg.style.backgroundImage = `url("data:image/svg+xml;utf8,${encodeURIComponent(svgModificado)}")`;
+        });
+      }
+      
     } catch (error) {
       console.error('Erro ao carregar e modificar o SVG:', error);
     }
-  };
+};
 
 function addProdutosAuto(quantidade){
   var catLinha = document.querySelector('.produtos-destaque-carrossel');
@@ -31,7 +43,7 @@ function addProdutosAuto(quantidade){
   for (var i = 0; i < quantidade; i++) {
       console.log(quantidade)
       var novoProduto =
-                        "<div class='destaque-card' class='svg-container'>"  +
+                        "<div class='destaque-card svg-container'>"  +
                         "<div>" +
                         "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem'>" +
                         "</div>" +
