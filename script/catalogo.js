@@ -89,12 +89,23 @@ function addAoCarrinho(botao) {
       let sum = div.querySelector('.somar');
       console.log(sum)
       sum.addEventListener('click', () => {
-        console.log('adicionando')
         const quantidade = div.querySelector('.addCarrinho');
+        if (quantidade.innerHTML <=0){
+          div.innerHTML =
+            "<div class='circulo'>" +
+            "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
+            "</div>";
+            sacola.innerHTML = 0
+
+            let newCirculo = div.querySelector('.circulo');
+            newCirculo.addEventListener('click', () => {
+            (addAoCarrinho(newCirculo))})
+        }else{
+        console.log('adicionando')
         console.log(quantidade.innerHTML)
         quantidade.innerHTML = parseInt(quantidade.innerHTML) + 1
-        sacola.innerHTML = parseInt(sacola.innerHTML) + 1});
-
+        sacola.innerHTML = parseInt(sacola.innerHTML) + 1}});
+        
         let sub = div.querySelector('.subtrair');
         console.log(sub)
         sub.addEventListener('click', () => {
@@ -103,11 +114,12 @@ function addAoCarrinho(botao) {
           console.log(quantidade.innerHTML)
           quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
           sacola.innerHTML = parseInt(sacola.innerHTML) - 1
-          if (quantidade.innerHTML == 0){
+          if (quantidade.innerHTML <= 0){
             div.innerHTML =
             "<div class='circulo'>" +
             "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
             "</div>";
+            sacola.innerHTML = 0
 
             let newCirculo = div.querySelector('.circulo');
             newCirculo.addEventListener('click', () => {
