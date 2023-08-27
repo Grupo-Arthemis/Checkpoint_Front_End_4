@@ -41,7 +41,6 @@ function addProdDestAuto(quantidade){
   var catLinha = document.querySelector('.produtos-destaque-carrossel');
 
   for (var i = 0; i < quantidade; i++) {
-      console.log(quantidade)
       var novoProduto =
                         "<div class='destaque-card svg-container'>"  +
                         "<div>" +
@@ -68,7 +67,6 @@ function addProdGaleAuto(quantidade){
   var grid = document.querySelector('.grid-produtos');
 
   for (var i = 0; i < quantidade; i++) {
-      console.log(quantidade)
       var novoProduto = 
                         "<div class='destaque-card-grid svg-container'>" +
                         "<div>" +
@@ -105,7 +103,7 @@ addProdDestAuto(2);
 
 
 let botao = document.querySelectorAll('.circulo');
-console.log(botao);
+
 
 
 botao.forEach((botao) => {
@@ -116,15 +114,14 @@ let sacola = document.querySelector('#quantItensSacola');
 
 function addAoCarrinho(botao) {
     let div = botao.parentNode;
-    console.log(div)
       div.innerHTML = "<p class='subtrair'>-</p>" +
                       "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
                       "<p class='somar'>+</p>";
-      console.log('Botão clicado')
+
       sacola.innerHTML = parseInt(sacola.innerHTML) + 1;
 
       let sum = div.querySelector('.somar');
-      console.log(sum)
+
       sum.addEventListener('click', () => {
         const quantidade = div.querySelector('.addCarrinho');
         if (quantidade.innerHTML <=0){
@@ -138,17 +135,12 @@ function addAoCarrinho(botao) {
             newCirculo.addEventListener('click', () => {
             (addAoCarrinho(newCirculo))})
         }else{
-        console.log('adicionando')
-        console.log(quantidade.innerHTML)
         quantidade.innerHTML = parseInt(quantidade.innerHTML) + 1
         sacola.innerHTML = parseInt(sacola.innerHTML) + 1}});
         
         let sub = div.querySelector('.subtrair');
-        console.log(sub)
         sub.addEventListener('click', () => {
-          console.log('subitraindo')
           const quantidade = div.querySelector('.addCarrinho');
-          console.log(quantidade.innerHTML)
           quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
           sacola.innerHTML = parseInt(sacola.innerHTML) - 1
           if (quantidade.innerHTML <= 0){
@@ -162,6 +154,9 @@ function addAoCarrinho(botao) {
             newCirculo.addEventListener('click', () => {
             (addAoCarrinho(newCirculo))})}})
 };
+
+
+alterarCoresBloob("randon","randon");
 
 function calch(px){
   var valor = (px*100)/1080;
