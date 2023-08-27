@@ -37,7 +37,7 @@ async function alterarCoresBloob(cor1,cor2) {
     }
 };
 
-function addProdutosAuto(quantidade){
+function addProdDestAuto(quantidade){
   var catLinha = document.querySelector('.produtos-destaque-carrossel');
 
   for (var i = 0; i < quantidade; i++) {
@@ -64,7 +64,44 @@ function addProdutosAuto(quantidade){
   }
 };
 
-addProdutosAuto(2);
+function addProdGaleAuto(quantidade){
+  var grid = document.querySelector('.grid-produtos');
+
+  for (var i = 0; i < quantidade; i++) {
+      console.log(quantidade)
+      var novoProduto = 
+                        "<div class='destaque-card-grid svg-container'>" +
+                        "<div>" +
+                        "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem-grid'>" +
+                        "</div>" +
+                        "<div>" +
+                        "<div class='card-info-grid'>" +
+                        "<div>" +
+                        "<p class='anoVinhoDestaque-grid'>2023</p>" +
+                        "</div>" +
+                        "<div class='bottom-info-grid'>" +
+                        "<div>" +
+                        "<div>" +
+                        "<h2 class='nomeVinhoDestaque-grid'>DOMINI VENETI PINOT GRIGIO</h2>" +
+                        "<div class='grid-separation'></div>" +
+                        "</div>" +
+                        "<h3 class='precoVinhoDestaque-grid'>R$ 199,99</h3>" +
+                        "</div>" +
+                        "<div class='card-carrinho'>" +
+                        "<div class='circulo'>" +
+                        "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>"
+      grid.innerHTML += novoProduto;
+  }
+};
+
+addProdGaleAuto(8);
+addProdDestAuto(2);
 
 
 let botao = document.querySelectorAll('.circulo');
