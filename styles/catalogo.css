@@ -1,11 +1,9 @@
 @import url(./padrao.css);
-@import url(../script/calcular.js);
+
 
 :root{
     overflow-x: hidden;
 }
-
-
 
 header nav{
     display: flex;

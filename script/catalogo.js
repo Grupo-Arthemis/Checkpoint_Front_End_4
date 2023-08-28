@@ -158,12 +158,3 @@ function addAoCarrinho(botao) {
 
 alterarCoresBloob("randon","randon");
 
-function calch(px){
-  var valor = (px*100)/1080;
-  return valor;
-}
-
-function calcw(px){
-  var valor = (px*100)/1920;
-  return valor;
-} 
