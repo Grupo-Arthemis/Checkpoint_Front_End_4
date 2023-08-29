@@ -1,3 +1,7 @@
+console.log(vinhos);
+
+
+
 // Função para carregar um arquivo SVG e alterar as cores
 
 async function alterarCoresBloob(cor1,cor2) {
@@ -101,10 +105,7 @@ function addProdGaleAuto(quantidade){
 addProdGaleAuto(8);
 addProdDestAuto(2);
 
-
 let botao = document.querySelectorAll('.circulo');
-
-
 
 botao.forEach((botao) => {
   botao.addEventListener('click', () => {
@@ -114,6 +115,9 @@ let sacola = document.querySelector('#quantItensSacola');
 
 function addAoCarrinho(botao) {
     let div = botao.parentNode;
+    console.log(botao.parentElement.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
+    console.log(botao.parentElement.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
+    console.log(botao.parentElement.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
       div.innerHTML = "<p class='subtrair'>-</p>" +
                       "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
                       "<p class='somar'>+</p>";
@@ -143,6 +147,7 @@ function addAoCarrinho(botao) {
           const quantidade = div.querySelector('.addCarrinho');
           quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
           sacola.innerHTML = parseInt(sacola.innerHTML) - 1
+          div
           if (quantidade.innerHTML <= 0){
             div.innerHTML =
             "<div class='circulo'>" +
