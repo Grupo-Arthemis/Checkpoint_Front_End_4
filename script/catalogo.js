@@ -1,6 +1,26 @@
-console.log(vinhos);
+let vinhos; 
 
+function carregarDadosVinhos() {
+  fetch('../script/vinhos.json') 
+      .then(response => response.json())
+      .then(data => {
+          vinhos = data; 
 
+          addProdDestAuto(2, vinhos);
+          addProdGaleAuto(8, vinhos);
+
+          let botao = document.querySelectorAll('.circulo');
+          botao.forEach((botao) => {
+            botao.addEventListener('click', () => {
+              (addAoCarrinho(botao))})});
+
+      })
+      .catch(error => {
+          console.error('Erro ao carregar os dados:', error);
+      });
+}
+
+carregarDadosVinhos();
 
 // Função para carregar um arquivo SVG e alterar as cores
 
@@ -41,9 +61,8 @@ async function alterarCoresBloob(cor1,cor2) {
     }
 };
 
-function addProdDestAuto(quantidade){
+function addProdDestAuto(quantidade, vinhos){
   var catLinha = document.querySelector('.produtos-destaque-carrossel');
-
   for (var i = 0; i < quantidade; i++) {
       var novoProduto =
                         "<div class='destaque-card svg-container'>"  +
@@ -52,10 +71,10 @@ function addProdDestAuto(quantidade){
                         "</div>" +
                         "<div class='card-info'>" +
                         "<div>" +
-                        "<h2 class='nomeVinhoDestaque'>DOMINI VENETI PINOT GRIGIO</h2>" +
-                        "<p class='anoVinhoDestaque'>2023</p>" +
+                        "<h2 class='nomeVinhoDestaque'>" + vinhos[i].nome.toUpperCase() + "</h2>" +
+                        "<p class='anoVinhoDestaque'>" + vinhos[i].ano + "</p>" +
                         "</div>" +
-                        "<h3 class='precoVinhoDestaque'>R$ 199,99</h3>" +
+                        "<h3 class='precoVinhoDestaque'>R$ "+ vinhos[i].preco + "</h3>" +
                         "</div>" +
                         "<div class='card-carrinho'>" +
                         "<div class='circulo'>" +
@@ -69,25 +88,28 @@ function addProdDestAuto(quantidade){
 
 function addProdGaleAuto(quantidade){
   var grid = document.querySelector('.grid-produtos');
-
   for (var i = 0; i < quantidade; i++) {
+    addProdGale(vinhos[i].nome,vinhos[i].preco,vinhos[i].ano,true);
+}};
+
+function addProdGale(nome,preco,ano,auto){
+      var grid = document.querySelector('.grid-produtos');
       var novoProduto = 
                         "<div class='destaque-card-grid svg-container'>" +
                         "<div>" +
                         "<img src='../assets/foto-vinho.png' alt='' class='destaque-card-imagem-grid'>" +
                         "</div>" +
-                        "<div>" +
                         "<div class='card-info-grid'>" +
                         "<div>" +
-                        "<p class='anoVinhoDestaque-grid'>2023</p>" +
+                        "<p class='anoVinhoDestaque'>" + ano + "</p>" +
                         "</div>" +
                         "<div class='bottom-info-grid'>" +
                         "<div>" +
                         "<div>" +
-                        "<h2 class='nomeVinhoDestaque-grid'>DOMINI VENETI PINOT GRIGIO</h2>" +
+                        "<h2 class='nomeVinhoDestaque'>" + nome + "</h2>" +
                         "<div class='grid-separation'></div>" +
                         "</div>" +
-                        "<h3 class='precoVinhoDestaque-grid'>R$ 199,99</h3>" +
+                        "<h3 class='precoVinhoDestaque'>R$ "+ preco + "</h3>" +
                         "</div>" +
                         "<div class='card-carrinho'>" +
                         "<div class='circulo'>" +
@@ -96,28 +118,29 @@ function addProdGaleAuto(quantidade){
                         "</div>" +
                         "</div>" +
                         "</div>" +
-                        "</div>" +
                         "</div>"
       grid.innerHTML += novoProduto;
-  }
+      if (auto != true){
+        let botao = document.querySelectorAll('.circulo');
+        botao.forEach((botao) => {
+          botao.addEventListener('click', () => {
+            (addAoCarrinho(botao))})});        
+      }
 };
 
-addProdGaleAuto(8);
-addProdDestAuto(2);
-
-let botao = document.querySelectorAll('.circulo');
-
-botao.forEach((botao) => {
-  botao.addEventListener('click', () => {
-    (addAoCarrinho(botao))})});
-
-let sacola = document.querySelector('#quantItensSacola');
-
 function addAoCarrinho(botao) {
+
+    let sacola = document.querySelector('#quantItensSacola');
     let div = botao.parentNode;
-    console.log(botao.parentElement.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
-    console.log(botao.parentElement.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
-    console.log(botao.parentElement.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
+    if (div.parentElement.parentElement.className == "destaque-card svg-container"){
+      console.log(div.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
+      console.log(div.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
+      console.log(div.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
+    }else{
+      console.log(div.parentElement.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
+      console.log(div.parentElement.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
+      console.log(div.parentElement.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
+    }
       div.innerHTML = "<p class='subtrair'>-</p>" +
                       "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
                       "<p class='somar'>+</p>";
@@ -159,7 +182,6 @@ function addAoCarrinho(botao) {
             newCirculo.addEventListener('click', () => {
             (addAoCarrinho(newCirculo))})}})
 };
-
 
 alterarCoresBloob("randon","randon");
 
