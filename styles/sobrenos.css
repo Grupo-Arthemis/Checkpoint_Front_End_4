@@ -1,63 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Droid+Sans&family=Bona+Nova&family=Cutive+Mono&display=swap');
-
-
-
-:root {
-	--bege: #FFEFD8;
-	--vermelho-claro: #810606;
-	--vermelho-medio: #6A0404;
-	--vermelho-escuro: #3B0507;
-
-}
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-a{
-	text-decoration: none;
-}
-
 @import url(./padrao.css);
 
 
@@ -277,3 +217,227 @@ footer img{
     cursor: pointer;
     font-size: min(30px ,1.04166vw);
 }
+
+/* ----------------------------------------------------------------- main ----------------------------------------------------------------- */
+.banner{
+    background-color: #000101;
+    display: flex;
+}
+
+.banner .texto{
+    padding: 3vw;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner h1{
+    color: #F5F5F5;
+    font-family: Cutive Mono;
+    font-size: min(60px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.banner p{
+    color: #F5F5F5;
+    font-family: Bona Nova;
+    font-size: min(30px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+}
+
+.banner .imagem{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img{
+    width: 100%;
+}
+
+
+.localizacao{
+    background-color: #000101;
+    text-align: center;
+    padding-bottom: 15vw;
+}
+
+.localizacao h1{
+    color: #F5F5F5;
+    font-family: Cutive Mono;
+    font-size: min(60px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    text-align: center;
+    padding-top: 3vw;
+}
+
+.localizacao p{
+    color: #F5F5F5;
+    text-align: center;
+    font-family: Droid Sans;
+    font-size: min(30px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-top: 2vw;
+}
+
+.localizacao img{
+    width: 80%;
+    margin-top: 4vw;
+    margin-bottom: 22vw;
+}
+
+.contatos{
+    background-image: url("../assets/fundo-cinza-gradiante-divisao.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    margin-top: -23vw;
+    padding-top: 23vw;
+    width: 100%;
+    height: 70vh;
+}
+
+.contatos h1{
+    color: #000;
+    font-family: Cutive Mono;
+    font-size: min(80px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100%;
+    text-align: center;
+}
+
+.contatos h2{
+    color: #000;
+    text-align: center;
+    font-family: Cutive Mono;
+    font-size: min(40px, 1vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.dados{
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+    margin: 3vw 5vw;
+    align-items: center;
+    height: max-content;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.informacoes h2{
+    text-align: start;
+}
+
+.sugestao{
+    background-color: #dadada;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2vw;
+    border-radius: 3vw;
+}
+
+.sugestao h2{
+    margin-bottom: 2vw;
+}
+
+.sugestao form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    height: 100%;
+}
+
+.sugestao .form-nome{
+    background-color: #EFEFF0;
+    border-radius: 1vw;
+    height: 30%;
+    border: none;
+}
+
+.sugestao .form-text{
+    background-color: #EFEFF0;
+    border-radius: 1vw;
+    height: 50%;
+    border: none;
+}
+
+.sugestao .form-botao{
+    background-color: #6B6B6D;
+    border-radius: 1vw;
+    height: min(70px, 1vw);
+    width: 50%;
+    margin: auto;
+    color: #FFF;
+    font-size: min(30px, 1vw);
+}
+
+.form-botao:hover{
+    background-color: #EFEFF0;
+    color: #6A6565;
+    
+
+}
+
+form ::placeholder{
+    font-size: min(30px, 1vw);
+    color: #6A6565;
+    text-align: start;
+    font-family: Cutive Mono;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    .banner{
+        flex-direction: column-reverse;
+    }
+
+    .banner img{
+        width:50%;
+    }
+
+    .dados{
+        display: flex;
+        flex-direction: column-reverse;
+        height: max-content;
+        gap: 10vw;
+        margin-top: 5vw;
+    }
+
+
+}
+
