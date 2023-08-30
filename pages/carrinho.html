@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/catalogo.css">
-    <script src="https://kit.fontawesome.com/8ef8de57aa.js" crossorigin="anonymous"></script>
-    <script src="../script/catalogo.js" defer></script>
     <script src="../script/padrao.js" defer></script>
-    <title>Catalogo</title>
+    <script src="../script/carrinho.js" defer></script>
+    <link rel="stylesheet" href="../styles/carrinho.css">
+    <script src="https://kit.fontawesome.com/8ef8de57aa.js" crossorigin="anonymous"></script>
+    <title>Home</title>
 </head>
 <body>
     <header>
@@ -51,59 +51,79 @@
                 </ul>
             </nav>
         </div>
-        <div class="conteudo">
-            <section class="produtos-destaque">
-                <h1>Produtos em destaque</h1>
-                <div class="produtos-destaque-carrossel">
-                    <div class="destaque-card svg-container">
+
+
+        <section>
+            
+            <div class="lista-produtos-area">
+                <div class="card">
+                    <div class="espaco-1">
+                        <img src="../assets/foto-vinho.png" alt="foto do vinho" class="foto-vinho">
+                    </div>
+                    <div class="espaco-2">
                         <div>
-                            <img src="../assets/foto-vinho.png" alt="" class="destaque-card-imagem">
+                            <h2>ITEM</h2>
+                            <div class="divisoria"></div>
                         </div>
-                        <div class="card-info">
-                            <div>
-                                <h2 class="nomeVinhoDestaque">DOMINI VENETI PINOT GRIGIO</h2>
-                                <p class="anoVinhoDestaque">2023</p>
-                            </div>
-                            <h3 class="precoVinhoDestaque">R$ 199,99</h3>
+                        <div class="conteudo">
+                            <h3 class="nome-item">DOMINI VENETI PINOT GRIGIO</h3>
                         </div>
-                        <div class="card-carrinho">
-                            <div class="circulo">
-                                <img src="../assets/carrinho.svg" alt="" class="addCarrinho">
+                    </div>
+                    <div class="espaco-3">
+                        <div>
+                            <h2>PREÇO</h2>
+                            <div class="divisoria"></div>
+                        </div>
+                        <div class="conteudo">
+                            <h3 class="preco-item">R$ 199.99</h3>
+                        </div>
+                    </div>
+                    <div class="espaco-4">
+                        <div>
+                            <h2>QTD</h2>
+                            <div class="divisoria"></div>
+                        </div>
+                        <div class="conteudo">
+                            <div class="alterar-quantidade">
+                                <div class="somar"><p>+</p></div>
+                                <div class="circulo">
+                                    <p class="quantidade">1</p>
+                                </div>
+                                <div class="subtrair"><p>–</p></div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <h1>VEJA MAIS PRODUTOS</h1>
-            </section>
-            <section class="produtos-galeria">
-                <div class="grid-produtos">
-                    <div class="destaque-card-grid svg-container">
-                        <div>
-                            <img src="../assets/foto-vinho.png" alt="" class="destaque-card-imagem-grid">
-                        </div>
-                        <div class="card-info-grid">
-                            <div>
-                                <p class="anoVinhoDestaque">2023</p>
-                            </div>
-                            <div class="bottom-info-grid">
-                                <div>
-                                    <div>
-                                        <h2 class="nomeVinhoDestaque">DOMINI VENETI PINOT GRIGIO</h2>
-                                        <div class="grid-separation"></div>
-                                    </div>
-                                    <h3 class="precoVinhoDestaque">R$ 199,99</h3>
-                                </div>
-                                <div class="card-carrinho">
-                                    <div class="circulo">
-                                        <img src="../assets/carrinho.svg" alt="" class="addCarrinho">
-                                    </div>
-                                </div>
-                            </div>
+            </div>
+
+            <div class="resumo-pedido-area">
+                <div class="lista-pedidos">
+                    <h1>SUBTOTAL</h1>
+                    <div class="resumo-produtos">
+                        <div class="produto">
+                            <h2 class="nome-produto">DOMINI VENETI PINOT GRIGIO</h2>
+                            <h2 class="preco-produto">R$ 199.99</h2>
                         </div>
                     </div>
+                    <div class="divisoria"></div>
+                    <div class="entrega">
+                        <h1>ENTREGA</h1>
+                        <h2 class="preco-entrega">R$ 0,00</h2>
+                    </div>
+                    <div class="divisoria"></div>
+                    <div class="total">
+                        <h1>TOTAL</h1>
+                        <h2 class="preco-total">R$ 0,00</h2>
+                    </div>
+                    <div class="botao-reserva">
+                        <h2>RESERVAR PEDIDO  <i class="fas fa-shopping-cart"></i></h2>
+                    </div>
                 </div>
-            </section>
-        </div>
+            </div>
+
+        </section>
+
+
     </main>
     <footer>
         <nav>
