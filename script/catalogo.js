@@ -1,5 +1,6 @@
 // Limpar local storage quando ini9ciar a pagina (tem que fazer funcao para ver se esta cadastrado ou se ja tinha coisa)
 localStorage.clear();
+// quantidadeSac.textContent = vinhoExistente.quantidade;
 
 let vinhos; 
 
@@ -184,32 +185,38 @@ function addAoCarrinho(botao){
   sub.addEventListener('click', function() {
     const quantidadeSac = div.querySelector('.addCarrinho');
     const vinhoExistente = listaVinhos.find(item => item.nome === nomeVinho);
-
+  
     if (vinhoExistente && vinhoExistente.quantidade > 0) {
       vinhoExistente.quantidade--;
       quantidadeSac.textContent = vinhoExistente.quantidade;
     }
-    if (vinhoExistente && vinhoExistente.quantidade == 0){
+  
+    if (vinhoExistente && vinhoExistente.quantidade === 0) {
+      const index = listaVinhos.indexOf(vinhoExistente);
+      if (index !== -1) {
+        listaVinhos.splice(index, 1);
+      }
       div.innerHTML =
-            "<div class='circulo'>" +
-            "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
-            "</div>";
+        "<div class='circulo'>" +
+        "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
+        "</div>";
       ;
-      sacola.innerHTML = 0
-
+      sacola.innerHTML = 0;
+  
       let newCirculo = div.querySelector('.circulo');
       newCirculo.addEventListener('click', () => {
-      (addAoCarrinho(newCirculo))})
-
+        addAoCarrinho(newCirculo);
+      });
     }
+  
     localStorage.setItem('listaVinhos', JSON.stringify(listaVinhos));
-
+  
     const totalQuantidade = listaVinhos.reduce((total, item) => total + item.quantidade, 0);
     sacola.innerHTML = totalQuantidade;
-
+  
     console.log(`Vinho Removido! Nome: ${nomeVinho}`);
     console.log(`Vinho Removido! Nome: ${precoVinho}`);
-    console.log(listaVinhos) 
+    console.log(listaVinhos);
   });
 }
 
