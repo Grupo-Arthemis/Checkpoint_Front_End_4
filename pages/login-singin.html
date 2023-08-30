@@ -38,9 +38,6 @@
                 <h3>Pedidos</h3>
                 <ul>
                     <li><a href=""><i class="fas fa-shopping-cart"></i> Carrinho</a></li>
-                    <li><a href=""><i class="fas fa-list"></i> Pedidos</a></li>
-                    <li><a href=""><i class="fas fa-heart"></i> Favoritos</a></li>
-                    <li><a href=""><i class="fas fa-clock"></i> Últimas Compras</a></li>
                 </ul>
                 <h3>Páginas</h3>
                 <ul>
@@ -50,8 +47,8 @@
                 </ul>
                 <h3>Entrar</h3>
                 <ul>
-                    <li><a href=""><i class="fas fa-sign-in-alt"></i> Login</a></li>
-                    <li><a href=""><i class="fas fa-user-plus"></i> Singn-in</a></li>
+                    <li><a href="../pages/login-singin.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="../pages/login-singin.html"><i class="fas fa-user-plus"></i> Singn-in</a></li>
                 </ul>
             </nav>
         </div>
@@ -63,53 +60,53 @@
                             <h1>Bem Vindo <br> De Volta!</h1>
                             <p>Para ficar conectado conosco <br> insira seus dados</p>
                         </div>
-                        <button id="telaLogin">Login</button>
+                        <button id="telaCadastro">Login</button>
                     </div>
                     <div class="area-informacoes">
                         <div>
                             <h1>Criar uma conta</h1>
-                            <p>ou use seu e-mail para cadastrar-se</p>
+                            <p id="avisoCadastro">Use seu e-mail para cadastrar-se</p>
                         </div>
                         <form>
-                            <input type="text" placeholder="Nome" class="icon-placeholder">
+                            <input type="text" placeholder="Nome" class="icon-placeholder" id="Nome">
                             <i class="fas fa-user"></i>
                             
-                            <input type="text" placeholder="Sobrenome" class="icon-placeholder">
+                            <input type="text" placeholder="Sobrenome" class="icon-placeholder" id="Sobrenome">
                             <i class="fas fa-user"></i>
                             
-                            <input type="text" placeholder="Digite seu e-mail" class="icon-placeholder">
+                            <input type="text" placeholder="Digite seu e-mail" class="icon-placeholder" id="Email">
                             <i class="fas fa-envelope"></i>
                             
-                            <input type="text" placeholder="Senha" class="icon-placeholder">
-                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Senha" class="icon-placeholder" id="Senha">
+                            <i class="fas fa-lock" id="SenhaIcon"></i>
                             
-                            <input type="text" placeholder="Confirmar Senha" class="icon-placeholder">
-                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Confirmar Senha" class="icon-placeholder" id="Senha_Confirm">
+                            <i class="fas fa-lock" id="SenhaConfirmaIcon"></i>
                         </form>
-                        <button>Cadastrar</button>            
+                        <button id="BotaoCadastro">Cadastrar</button>            
                     </div>
                 </div>
                 <div class="card-login">
                     <div class="area-informacoes">
                         <div>
                             <h1>Entrar</h1>
-                            <p>use seu e-mail e senha cadastrados</p>
+                            <p id="avisoLogin">use seu e-mail e senha cadastrados</p>
                         </div>
                         <form>
-                            <input type="text" placeholder="Digite seu e-mail" class="icon-placeholder">
+                            <input type="text" placeholder="Digite seu e-mail" class="icon-placeholder" id="EmailInput">
                             <i class="fas fa-envelope"></i>
                             
-                            <input type="text" placeholder="Senha" class="icon-placeholder">
-                            <i class="fas fa-lock"></i>
+                            <input type="password" placeholder="Senha" class="icon-placeholder" id="SenhaInput">
+                            <i class="fas fa-lock" id="SenhaIconLogin"></i>
                         </form>
-                        <button>login</button>            
+                        <button id="BotaoLogin">login</button>            
                     </div>
                     <div class="area-troca">
                         <div>
                             <h1>E aí Fãns da uva</h1>
                             <p>insira seus dados pessoais <br> e começe essa jornada conosco</p>
                         </div>
-                        <button id="telaCadastro" >Cadastrar</button>
+                        <button id="telaLogin" >Cadastrar</button>
                     </div>
                 </div>
             </div>

@@ -89,7 +89,7 @@ function addProdDestAuto(quantidade, vinhos){
 function addProdGaleAuto(quantidade){
   var grid = document.querySelector('.grid-produtos');
   for (var i = 0; i < quantidade; i++) {
-    addProdGale(vinhos[i].nome,vinhos[i].preco,vinhos[i].ano,true);
+    addProdGale(vinhos[i].nome.toUpperCase(),vinhos[i].preco,vinhos[i].ano,true);
 }};
 
 function addProdGale(nome,preco,ano,auto){
