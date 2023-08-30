@@ -5,9 +5,7 @@ if (window.innerWidth < 700){
 else{
     x = 1
 }
-
 adaptar(x)
-
 window.addEventListener('resize',()=>{
     if (window.innerWidth < 700){
         x = 2.3
@@ -19,7 +17,7 @@ window.addEventListener('resize',()=>{
 });
 
 function adaptar (x){
-    for(let i = 9; i < stylesheet.cssRules.length; i++) {
+    for(let i = 1; i < stylesheet.cssRules.length; i++) {
         if (stylesheet.cssRules[i].cssText.includes( "min(")) {
             var matches = stylesheet.cssRules[i].cssText.match(/min\([^)]*\)/g);
             antes = stylesheet.cssRules[i].cssText
@@ -44,34 +42,24 @@ function calcularProporcao(tamanhoPX){
 }
 };
 
+var maiorDeIdade = JSON.parse(localStorage.getItem("MaiorDeIdade"));
+if (maiorDeIdade == null){
+    localStorage.setItem("MaiorDeIdade", JSON.stringify("N"));
+}else{
+    if (maiorDeIdade == "S"){
+        window.location.href = "./pages/home.html";
+    }
+}
 
-const menuLateralCompleto = document.querySelector('.menu-lateral-completo');
-const abrirMenu = document.querySelector('.hamburguer');
-const fecharMenu = document.querySelector('.menu-lateral-close');
 
-abrirMenu.addEventListener('click', () => {
-  menuLateralCompleto.classList.toggle('open');
-  menuLateralCompleto.style.animation = 'entrar 0.5s ease-in-out';
+const botaoSim = document.querySelector("#sim");
+const botaoNao = document.querySelector("#nao");
+
+botaoSim.addEventListener("click", ()=>{
+    localStorage.setItem("MaiorDeIdade", JSON.stringify("S"));
+    window.location.href = "./pages/home.html";
 });
 
-fecharMenu.addEventListener('click', () => {
-  menuLateralCompleto.style.animation = 'sair 0.5s ease-in-out';
-  setTimeout(() => {
-    menuLateralCompleto.classList.toggle('open');
-  }, 500);
+botaoNao.addEventListener("click", ()=>{
+    window.alert("Você necessita ser maior de idade para acessar o site!");
 });
-
-function calch(px){
-    var valor = (px*100)/1080;
-    return valor;
-  };
-  
-function calcw(px){
-    var valor = (px*100)/1920;
-    return valor;
-  };
-  
-
-
-
-
