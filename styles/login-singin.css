@@ -221,16 +221,16 @@ footer img{
 /* ----------------------------------------------------------------- main ----------------------------------------------------------------- */
 
 .area-usuario{
-    height: fit-content;
+    height: max-content;
     background-image: url(../assets/papel-preto-amassado.png);
-    padding: 9vw 12vw;
+    padding: 3vw 12vw;
     display: flex;
     justify-content: center;
 }
 
 .card{
     background-color: #444444;
-    height: 45vw;
+    height: 36vw;
     width: 90%;
     border-radius: 2vw;
     position: relative;
@@ -240,47 +240,98 @@ footer img{
     display: grid;
     grid-template-columns: 40% 60%;
     width: 100%;
-    height: 45vw;
+    height: 100%;
     position: absolute;
-    transition: clip-path 1s ease-in-out;
-    clip-path: inset(0 0 0 0);
 }
 
 .card-login{
     display: grid;
     grid-template-columns: 60% 40%;
     width: 100%;
-    height: 45vw;
+    height: 100%;
     position: absolute;
-    transition: clip-path 1s ease-in-out;
-    clip-path: inset(0 100% 0 0);
 }
 
+.animar-D-E {
+    display: inline-block; /* change display property */
+    animation: slide-in 1s forwards; /* add animation property */
+    clip-path: inset(0 0 0 0);
+  }
+  
+  @keyframes slide-in {
+    0%{
+        clip-path: inset(0 0 0 0);
+    }
+    100%{
+        clip-path: inset(0 100% 0 0);
+    }
+  }
 
-
+  .animar-E-D {
+    display: inline-block; /* change display property */
+    animation: slide-out 1s forwards; /* add animation property */
+  }
+  
+  @keyframes slide-out {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
 
 .card-cadastro .area-troca{
     background-color: #444444;
     border-radius: 2vw 0 0 2vw;
-    padding: 10%;
     display: flex;
+    padding: 0 10%;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
-    gap: 3vw;
+    justify-content: space-around;
+    height: 100%;
 }
 
 .card-login .area-troca{
     background-color: #444444;
     border-radius: 0 2vw 2vw 0;
-    padding: 10%;
     display: flex;
+    padding: 0 10%;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
-    gap: 3vw;
+    justify-content: space-around;
+    height: 100%;
 
 }
+
+.card-cadastro .area-informacoes{
+    background-color: #e8eae8;
+    border-radius: 0 2vw 2vw 0;
+    display: flex;
+    padding: 0 10%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    height: 100%;
+
+}
+
+.card-login .area-informacoes{
+    background-color: #e8eae8;
+    border-radius: 2vw 0 0 2vw;
+    display: flex;
+    padding: 0 10%;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+
+
+
+
 
 .card h1{
     color: #e8eae8;
@@ -326,30 +377,6 @@ footer img{
     background-color: #e8eae8;
     border: 3px solid #e8eae8;
     color: #444444;
-}
-
-.card-cadastro .area-informacoes{
-    background-color: #e8eae8;
-    border-radius: 0 2vw 2vw 0;
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    gap: 3vw;
-
-}
-
-.card-login .area-informacoes{
-    background-color: #e8eae8;
-    border-radius: 2vw 0 0 2vw;
-    padding: 10%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    gap: 3vw;
-
 }
 
 .area-informacoes h1, .area-informacoes p{
@@ -426,19 +453,21 @@ footer img{
 }
 
 @media only screen and (max-width: 700px) {
+
     .card{
         height: 160vw;
+        background-color: transparent;
     }
     .card-cadastro{
         grid-template-columns: none;
         grid-template-rows: 40% 60%;
-        height: 100%;
+        height: 80%;
     }
 
     .card-login{
         grid-template-columns: none;
         grid-template-rows: 40% 60%;
-        height: 100%;
+        height: 80%;
     }
 
     .card-cadastro .area-troca {

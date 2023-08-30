@@ -1,24 +1,19 @@
-// function alterarTela(paginaAtual){
-//     if (paginaAtual == "login"){
-//         document.querySelector(".card-login").setAttribute("style", "display: none;");
-//         document.querySelector(".card-cadastro").setAttribute("style", "display: grid;");
-//     } else{
-//         document.querySelector(".card-cadastro").setAttribute("style", "display: none;");
-//         document.querySelector(".card-login").setAttribute("style", "display: grid;");
-//     }
-// };
+const cadastro = document.querySelector('#telaCadastro'); 
+const login = document.querySelector('#telaLogin'); 
 
-console.log("teste");
+const cardCadastro = document.querySelector(".card-cadastro");
+const cardLogin = document.querySelector(".card-login");
 
-function alterarTela(paginaAtual) {
-    const cardCadastro = document.querySelector(".card-cadastro");
-    const cardLogin = document.querySelector(".card-login");
-  
-    if (paginaAtual === "cadastro") {
-      cardCadastro.setAttribute("style", "clip-path: inset(0 0 0 100%);");
-      cardLogin.setAttribute("style", "clip-path: inset(0 0 0 0);");
-    } else if (paginaAtual === "login") {
-        cardLogin.setAttribute("style", "clip-path: inset(0 100% 0 0);");
-        cardCadastro.setAttribute("style", "clip-path: inset(0 0 0 0);");
-    }
-};
+function mudarTelaCadastro(){
+  cardLogin.classList.remove('animar-E-D'); // remove animar-E-D class
+  cardCadastro.classList.add('animar-D-E'); // add animar-D-E class
+}
+
+function mudarTelaLogin(){
+  cardLogin.classList.remove('animar-D-E'); // remove animar-E-D class
+  cardLogin.classList.add('animar-D-E'); // add animar-D-E class
+  cardCadastro.classList.add('animar-D-E'); // add animar-D-E class
+}
+
+cadastro.addEventListener('click', mudarTelaCadastro); 
+login.addEventListener('click', mudarTelaLogin); 
