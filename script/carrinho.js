@@ -1,6 +1,5 @@
 // para verificação de login--------------------------------------------------------------------------------
 
-const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
 if (usuarioLogado == null) {
     window.alert("Você precisa estar logado para acessar essa página!");
     window.location.href = "../pages/login-singin.html";
@@ -12,65 +11,67 @@ if (usuarioLogado == null) {
 
 const produtosNoCarrinho = (JSON.parse(localStorage.getItem('listaVinhos')));
 
+if (produtosNoCarrinho == null) {
+    window.alert("Você não possui produtos no carrinho!");
+}else{
+    produtosNoCarrinho.forEach(produto => {
 
+        nomeVinho = produto.nome;
+        
+        produtoPreco = produto.preco;
 
-produtosNoCarrinho.forEach(produto => {
+        produtoQuantidade = produto.quantidade;
 
-    nomeVinho = produto.nome;
-    
-    produtoPreco = produto.preco;
+        produtoImagem = produto.imagem;
+        
+        document.querySelector(".lista-produtos-area").innerHTML += 
+        "<div class='card'>" +
+        "<div class='espaco-1'>" +
+        "<img src='../assets/foto-vinho.png' alt='foto do vinho' class='foto-vinho'>" +
+        "</div>" +
+        "<div class='espaco-2'>" +
+        "<div>" +
+        "<h2>ITEM</h2>" +
+        "<div class='divisoria'></div>" +
+        "</div>" +
+        "<div class='conteudo'>" +
+        "<h3 class='nome-item'>"+ nomeVinho.toUpperCase() + "</h3>" +
+        "</div>" +
+        "</div>" +
+        "<div class='espaco-3'>" +
+        "<div>" +
+        "<h2>PREÇO</h2>" +
+        "<div class='divisoria'></div>" +
+        "</div>" +
+        "<div class='conteudo'>" +
+        "<h3 class='preco-item'>R$ " + produtoPreco + "</h3>" +
+        "</div>" +
+        "</div>" +
+        "<div class='espaco-4'>" +
+        "<div>" +
+        "<h2>QTD</h2>" +
+        "<div class='divisoria'></div>" +
+        "</div>" +
+        "<div class='conteudo'>" +
+        "<div class='alterar-quantidade'>" +
+        "<div class='somar'><p>+</p></div>" +
+        "<div class='circulo'>" +
+        "<p class='quantidade'>" + produtoQuantidade + "</p>" +
+        "</div>" +
+        "<div class='subtrair'><p>–</p></div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>";
 
-    produtoQuantidade = produto.quantidade;
+        document.querySelector(".resumo-produtos").innerHTML +=
+        "<div class='produto'>" +
+        "<h2 class='nome-produto'>" + nomeVinho.toUpperCase() + "</h2>" +
+        "<h2 class='preco-produto'>R$ " + produtoPreco*produtoQuantidade + "</h2>" +
+        "</div>";
 
-    produtoImagem = produto.imagem;
-    
-    document.querySelector(".lista-produtos-area").innerHTML += 
-    "<div class='card'>" +
-    "<div class='espaco-1'>" +
-    "<img src='../assets/foto-vinho.png' alt='foto do vinho' class='foto-vinho'>" +
-    "</div>" +
-    "<div class='espaco-2'>" +
-    "<div>" +
-    "<h2>ITEM</h2>" +
-    "<div class='divisoria'></div>" +
-    "</div>" +
-    "<div class='conteudo'>" +
-    "<h3 class='nome-item'>"+ nomeVinho.toUpperCase() + "</h3>" +
-    "</div>" +
-    "</div>" +
-    "<div class='espaco-3'>" +
-    "<div>" +
-    "<h2>PREÇO</h2>" +
-    "<div class='divisoria'></div>" +
-    "</div>" +
-    "<div class='conteudo'>" +
-    "<h3 class='preco-item'>R$ " + produtoPreco + "</h3>" +
-    "</div>" +
-    "</div>" +
-    "<div class='espaco-4'>" +
-    "<div>" +
-    "<h2>QTD</h2>" +
-    "<div class='divisoria'></div>" +
-    "</div>" +
-    "<div class='conteudo'>" +
-    "<div class='alterar-quantidade'>" +
-    "<div class='somar'><p>+</p></div>" +
-    "<div class='circulo'>" +
-    "<p class='quantidade'>" + produtoQuantidade + "</p>" +
-    "</div>" +
-    "<div class='subtrair'><p>–</p></div>" +
-    "</div>" +
-    "</div>" +
-    "</div>" +
-    "</div>";
-
-    document.querySelector(".resumo-produtos").innerHTML +=
-    "<div class='produto'>" +
-    "<h2 class='nome-produto'>" + nomeVinho.toUpperCase() + "</h2>" +
-    "<h2 class='preco-produto'>R$ " + produtoPreco*produtoQuantidade + "</h2>" +
-    "</div>";
-
-});
+    });
+};
 
 document.querySelector(".preco-entrega").innerHTML = "R$ " + (Math.random() * (50 - 10) + 10).toFixed(2);
 

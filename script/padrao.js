@@ -38,10 +38,31 @@ function adaptar (x){
             stylesheet.insertRule(memoria, i)
         }
     }
-function calcularProporcao(tamanhoPX){
-        tamanhoVW = ((parseFloat(tamanhoPX) * 100) / 1920) * x;
-        return tamanhoVW;
-}
+    function calcularProporcao(tamanhoPX){
+            tamanhoVW = ((parseFloat(tamanhoPX) * 100) / 1920) * x;
+            return tamanhoVW;
+    }
+};
+
+
+const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+const entrarSair = document.querySelector('.entrar-sair');
+const areaLoginSingin = document.querySelector('.lista-login-singnin');
+
+if (usuarioLogado != null){
+    entrarSair.innerHTML = "Sair";
+    areaLoginSingin.innerHTML ="<li id='logout'><a>" + usuarioLogado.nome + " <i class='fas fa-sign-out-alt'></i></a></li>";
+
+    document.querySelector('#logout').addEventListener('click', () => {
+        localStorage.removeItem('usuarioLogado');
+        window.location.reload();
+    });
+    
+}else{
+    entrarSair.innerHTML = "Entrar";
+    areaLoginSingin.innerHTML =
+   " <li><a href='../pages/login-singin.html'><i class='fas fa-sign-in-alt'></i> Login</a></li>" +
+    "<li><a href='../pages/login-singin.html'><i class='fas fa-user-plus'></i> Singn-in</a></li>";
 };
 
 

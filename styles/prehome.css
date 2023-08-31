@@ -1,9 +1,9 @@
-@import url(./styles/padrao.css);
+@import url(./padrao.css);
 
 section{
     width: 100%;
     height: 100vh;
-    background-image: url(./assets/fundo-pre-home.jpg);
+    background-image: url(../assets/fundo-pre-home.jpg);
     background-size: cover;
     display: flex;
     flex-direction: column;
