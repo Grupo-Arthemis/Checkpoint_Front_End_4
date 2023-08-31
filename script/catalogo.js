@@ -1,5 +1,7 @@
 // Limpar local storage quando ini9ciar a pagina (tem que fazer funcao para ver se esta cadastrado ou se ja tinha coisa)
-localStorage.clear();
+window.addEventListener('beforeunload', () => {
+  localStorage.removeItem('listaVinhos');
+});
 // quantidadeSac.textContent = vinhoExistente.quantidade;
 
 let vinhos; 
