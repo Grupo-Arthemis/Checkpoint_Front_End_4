@@ -1,7 +1,14 @@
-// para testes de integração com o carrinho de compras----------------------------------------------
+// para verificação de login--------------------------------------------------------------------------------
+
+const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+if (usuarioLogado == null) {
+    window.alert("Você precisa estar logado para acessar essa página!");
+    window.location.href = "../pages/login-singin.html";
+}
 
 
-// para testes de integração com o carrinho de compras----------------------------------------------
+
+// para verificação de login--------------------------------------------------------------------------------
 
 const produtosNoCarrinho = (JSON.parse(localStorage.getItem('listaVinhos')));
 
