@@ -144,11 +144,19 @@ function addAoCarrinho(botao){
   // pegando as informacoes do vinho
   const cardInfoDiv = div.previousElementSibling;
   const nomeVinho = cardInfoDiv.querySelector('.nomeVinhoDestaque, .nomeVinhoDestaque-grid').textContent;
-  const precoVinho = cardInfoDiv.querySelector('.precoVinhoDestaque, .precoVinhoDestaque-grid').textContent;
+  const precoVinhoString = cardInfoDiv.querySelector('.precoVinhoDestaque, .precoVinhoDestaque-grid').textContent;
+
+  //pegando a imagem
+  const imgVinhoElement = cardInfoDiv.previousElementSibling.querySelector('.destaque-card-imagem, .destaque-card-imagem-grid');
+  const imgVinho = imgVinhoElement.getAttribute('src');
+
+  //convertendo para float
+  const precoVinho = parseFloat(precoVinhoString.replace('R$', '').replace(',', '.'));
   
   const vinho = {
     nome: nomeVinho,
     preco: precoVinho,
+    imagem: imgVinho,
     quantidade: 1
   };
   
