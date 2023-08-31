@@ -1,29 +1,9 @@
 // para testes de integração com o carrinho de compras----------------------------------------------
 
 
- produtoParaTeste = [
-    {
-    nome: "Produto Teste 1",
-    preco: 150.99,
-    quantidade: 2,
-    imagem: "../img/produtos/produto-teste.jpg",
- },
-    {
-    nome: "Produto Teste 2",
-    preco: 299.99,
-    quantidade: 3,
-    imagem: "../img/produtos/produto-teste.jpg",
- },
-];
-
- localStorage.setItem("produtosNoCarrinho", JSON.stringify(produtoParaTeste));
-
-
-
-
 // para testes de integração com o carrinho de compras----------------------------------------------
 
-const produtosNoCarrinho = (JSON.parse(localStorage.getItem('produtosNoCarrinho')));
+const produtosNoCarrinho = (JSON.parse(localStorage.getItem('listaVinhos')));
 
 
 
