@@ -139,3 +139,13 @@ function atualizarResumo(card) {
     document.querySelector(".preco-total").innerHTML = "R$ " + (precoCalculado + (parseFloat(document.querySelector(".preco-entrega").innerHTML.replace("R$ ", "")))).toFixed(2);
 };
 
+const botaoCompra = document.querySelector('.botao-reserva')
+
+botaoCompra.addEventListener("click", function(){
+    console.log("clicado")
+    if (confirm("Deseja finalizar?")){
+        alert("Será enviado um email, para finalização do pagamento. Muito obrigado!")
+        window.location.href = "../pages/catalogo.html";
+    }
+
+})
