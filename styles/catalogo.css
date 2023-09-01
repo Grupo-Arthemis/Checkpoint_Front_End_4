@@ -218,6 +218,103 @@ footer img{
     font-size: min(30px ,1.04166vw);
 }
 
+/* ----------------------------------------------------------------- menu direito---------------------------------------------------------- */
+
+.menu-lateral-criar{
+    display: flex;
+    position: fixed;
+    background-color: #e8eae8;
+    border: #000 solid 2px;
+    width: 50vw;
+    height: min(450px,1vw);
+    z-index: 5;
+    right: 0;
+    top: 37%;
+    margin-right: 0%;
+    border-radius: 1vw;
+    transition: all 0.5s ease-in-out;
+}
+
+.menu-lateral-criar-fechar{
+    margin-right: -46vw;
+}
+
+.menu-lateral-criar.open{
+    margin-right: 0%;
+}
+
+.personalizacao{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 5%;
+    border-radius: 1vw;
+    background-color: #d2d2d2;
+    position: relative;
+}
+
+.personalizarVinho{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 5%;
+    border-radius: 1vw;
+    background-color: #d2d2d2;
+    gap: 0.3vw;
+}
+
+.personalizacao h2{
+    color: #000;
+    text-align: center;
+    font-family: Droid Sans;
+    font-size: min(20px ,1.04166vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    letter-spacing: min(1.3px ,0.06770vw);
+}
+
+.personalizarCor{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 5%;
+    border-radius: 1vw;
+    background-color: #d2d2d2;
+}
+
+.personalizarVinho input{
+    border-radius: 0.2vw;
+    height: 90%;
+    background-color: #d2d2d2;
+    border: solid 1px #000;
+    font-family: Droid Sans;
+    font-size: min(20px ,1.04166vw);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: min(1.3px ,0.06770vw);
+}
+
+#botaoFecharBarra{
+    position: absolute;
+    top: 46%;
+    left: 1%;
+    cursor: pointer;
+    font-size: min(30px ,1.04166vw);
+}
+
+.criarProduto{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 /* ----------------------------------------------------------------- main ----------------------------------------------------------------- */
 
 main h1{

@@ -230,60 +230,35 @@ const imgVinho = imgVinhoElement.getAttribute('src');
   });
 }
 
-// function addAoCarrinho(botao) {
-
-//     let sacola = document.querySelector('#quantItensSacola');
-//     let div = botao.parentNode;
-//     if (div.parentElement.parentElement.className == "destaque-card svg-container"){
-//       console.log(div.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
-//       console.log(div.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
-//       console.log(div.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
-//     }else{
-//       console.log(div.parentElement.parentElement.querySelector(".precoVinhoDestaque").innerHTML);
-//       console.log(div.parentElement.parentElement.querySelector(".anoVinhoDestaque").innerHTML);
-//       console.log(div.parentElement.parentElement.querySelector(".nomeVinhoDestaque").innerHTML);
-//     }
-//       div.innerHTML = "<p class='subtrair'>-</p>" +
-//                       "<div class='circulop'><p class='addCarrinho'>1</p></div>" +
-//                       "<p class='somar'>+</p>";
-
-//       sacola.innerHTML = parseInt(sacola.innerHTML) + 1;
-
-//       let sum = div.querySelector('.somar');
-
-//       sum.addEventListener('click', () => {
-//         const quantidade = div.querySelector('.addCarrinho');
-//         if (quantidade.innerHTML <=0){
-//           div.innerHTML =
-//             "<div class='circulo'>" +
-//             "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
-//             "</div>";
-//             sacola.innerHTML = 0
-
-//             let newCirculo = div.querySelector('.circulo');
-//             newCirculo.addEventListener('click', () => {
-//             (addAoCarrinho(newCirculo))})
-//         }else{
-//         quantidade.innerHTML = parseInt(quantidade.innerHTML) + 1
-//         sacola.innerHTML = parseInt(sacola.innerHTML) + 1}});
-        
-//         let sub = div.querySelector('.subtrair');
-//         sub.addEventListener('click', () => {
-//           const quantidade = div.querySelector('.addCarrinho');
-//           quantidade.innerHTML = parseInt(quantidade.innerHTML) - 1
-//           sacola.innerHTML = parseInt(sacola.innerHTML) - 1
-//           div
-//           if (quantidade.innerHTML <= 0){
-//             div.innerHTML =
-//             "<div class='circulo'>" +
-//             "<img src='../assets/carrinho.svg' alt='' class='addCarrinho'> " +
-//             "</div>";
-//             sacola.innerHTML = 0
-
-//             let newCirculo = div.querySelector('.circulo');
-//             newCirculo.addEventListener('click', () => {
-//             (addAoCarrinho(newCirculo))})}})
-// };
-
 alterarCoresBloob("randon","randon");
 
+document.querySelector("#botaoFecharBarra").addEventListener("click", function(){
+  document.querySelector(".menu-lateral-criar").classList.toggle("menu-lateral-criar-fechar");
+  if (document.querySelector(".menu-lateral-criar").classList.contains("menu-lateral-criar-fechar")){
+    document.querySelector(".menu-lateral-criar").classList.remove("menu-lateral-criar-abrir");
+  }
+  else{
+    document.querySelector(".menu-lateral-criar").classList.add("menu-lateral-criar-abrir");
+  }
+});
+
+
+
+
+document.querySelector(".criarProduto").addEventListener("click", () => {
+  nomePersonalizado = document.querySelector("#nomeVinhoPersonalizacao").value.toUpperCase();
+  precoPersonalizado = document.querySelector("#precoVinhoPersonalizacao").value;
+  anoPersonalizado = document.querySelector("#anoVinhoPersonalizacao").value;
+
+  if(nomePersonalizado != "" && precoPersonalizado != "" && anoPersonalizado != ""){
+    addProdGale(nomePersonalizado,precoPersonalizado,anoPersonalizado);
+  }
+
+  cor1 = document.querySelector("#cor01").value;
+  cor2 = document.querySelector("#cor02").value;
+
+  if (cor1 != "#000000" && cor2 != "#000000"){
+    alterarCoresBloob(cor1,cor2);
+  }
+
+});
