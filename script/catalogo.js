@@ -243,7 +243,12 @@ document.querySelector("#botaoFecharBarra").addEventListener("click", function()
 });
 
 
-
+function mascaraAno() {
+  var input = document.getElementById("anoVinhoPersonalizacao");
+  if (input.value.length > 4) {
+      input.value = input.value.slice(0, 4);
+  }
+}
 
 document.querySelector(".criarProduto").addEventListener("click", () => {
   nomePersonalizado = document.querySelector("#nomeVinhoPersonalizacao").value.toUpperCase();
